@@ -1,0 +1,20 @@
+import helloWrold from "./components/hello world/hello world.vue";
+const components = [
+    helloWrold
+];
+
+const install = function (Vue, opts = {}) {
+    components.forEach(component => {
+        Vue.component(component.name, component);
+    });
+}
+
+/* istanbul ignore if */
+if (typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+}
+
+export default {
+    install,
+    helloWrold
+};
